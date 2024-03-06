@@ -1,0 +1,288 @@
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #434243;
+
+  ::placeholder {
+    font-size: 20px;
+  }
+}
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+}
+
+.tabs-container .tabs-heading {
+  font-size: 30px;
+  line-height: 28px;
+  margin-left: 50px;
+  color: white;
+}
+
+.tabs-nav {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 10px;
+  padding: 20px 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: rgb(137 132 132);
+  /* background-color: beige; */
+}
+
+.tab-left-container {
+  display: flex;
+  flex-basis: 5%;
+  padding-left: 20px;
+}
+.tab-left-container .add-tab-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  font-size: 24px;
+  width: 100%;
+  height: 100%;
+}
+
+.tab-left-container .add-tab-button i {
+  gap: 10px;
+  border-radius: 10px;
+  padding: 9px 20px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+.tab-left-container .add-tab-button i:hover {
+  background-color: #e0e0e0;
+}
+.tab-right-container {
+  display: flex;
+  flex-basis: 90%;
+  gap: 10px;
+  width: 100%; /* Set a width for the container */
+  height: 100%;
+  align-self: center;
+  margin: 0;
+  padding: 0px;
+  overflow-x: auto; /* Enable horizontal scroll when overflow occurs */
+  white-space: nowrap; /* Prevent line breaks within the container */
+  position: relative;
+}
+
+/* For Scroll bar css starts */
+.tab-right-container::-webkit-scrollbar {
+  width: 5px; /* Simulate scrollbar width for Webkit browsers */
+  height: 5px; /* Simulate scrollbar width for Webkit browsers */
+}
+
+.tab-right-container::-webkit-scrollbar-track {
+  background-color: #eee; /* Scrollbar track color */
+}
+
+.tab-right-container::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Scrollbar thumb color */
+}
+/* For scroll bar css ends */
+.tab {
+  display: flex;
+  flex: 1 0 0;
+  justify-content: center;
+  gap: 10px;
+  max-width: 80px;
+  border-radius: 10px;
+  padding: 10px 5px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  background-color: #fff;
+  min-width: 80px;
+  cursor: pointer;
+}
+.tab:hover {
+  background-color: #e0e0e0;
+}
+.tab.active {
+  background-color: #e0e0e0;
+}
+
+.tab .tab-text {
+  font-size: 20px;
+  line-height: 22px;
+  align-self: center;
+}
+.tab .tab-icon {
+  display: none;
+  /* this icon will be displayed by on Hover and will be handled by jQuery */
+}
+.tab:hover .tab-icon {
+  /* display: none; */
+  /* this icon will be displayed by on Hover and will be handled by jQuery */
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #ba0909;
+  cursor: pointer;
+}
+
+.tabs-container .tabs-body {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.tabs-body .input-iframe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  height: 100%;
+}
+.tabs-body .input-iframe-container .input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  /* margin-left: 10px; */
+}
+.tabs-body .input-iframe-container .input-wrapper .error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  color: white;
+}
+.tabs-body .input-iframe-container .input-wrapper .input-tag {
+  width: 80%;
+  height: 50px;
+  padding: 5px 20px 5px;
+  border-radius: 15px;
+  font-size: 20px;
+}
+.tabs-body .input-iframe-container .iframe-wrapper {
+  width: 100%;
+  height: 600px;
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  margin: 10px;
+}
+.tabs-body .input-iframe-container .iframe-wrapper .iframe-window {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Media Queries for responsive layout */
+@media screen and (orientation: landscape) and (max-width: 1024px) {
+  /* /ipad mini landscape */
+  .tabs-container {
+    padding-top: 50px;
+  }
+  .tabs-container .tabs-heading {
+    font-size: 20px;
+  }
+  .tab-left-container .add-tab-button {
+    font-size: 18px;
+    padding: 7px 15px;
+  }
+
+  .tab {
+    padding: 7px 5px;
+  }
+  .tab .tab-text {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .tabs-body .input-iframe-container .iframe-wrapper {
+    height: 400px;
+  }
+  .tabs-body .input-iframe-container .input-wrapper .input-tag {
+    font-size: 18px;
+  }
+  .tabs-body .input-iframe-container .input-wrapper .error {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .tabs-container {
+    padding-top: 70px;
+  }
+  .tabs-container .tabs-heading {
+    font-size: 20px;
+  }
+  .tab-left-container .add-tab-button {
+    font-size: 18px;
+    padding: 7px 15px;
+  }
+  .tab .tab-text {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .tabs-body .input-iframe-container .input-wrapper .input-tag {
+    font-size: 16px;
+  }
+  .tabs-body .input-iframe-container .input-wrapper {
+    flex-flow: row wrap;
+  }
+  .tabs-body .input-iframe-container .input-wrapper .error {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  body {
+    ::placeholder {
+      font-size: 16px;
+    }
+  }
+  .tabs-container {
+    padding-top: 30px;
+  }
+  .tabs-container .tabs-heading {
+    font-size: 18px;
+  }
+  .tab .tab-text {
+    font-size: 16px;
+    line-height: 18px;
+    align-self: center;
+  }
+  .tab-left-container .add-tab-button {
+    font-size: 16px;
+    padding: 7px 15px;
+  }
+
+  .tab {
+    padding: 7px 5px;
+  }
+  .tabs-body .input-iframe-container .input-wrapper {
+    flex-flow: row wrap;
+  }
+
+  .tabs-body .input-iframe-container .input-wrapper .input-tag {
+    font-size: 16px;
+  }
+  .tabs-body .input-iframe-container .input-wrapper .error {
+    font-size: 14px;
+  }
+  .tabs-body .input-iframe-container .iframe-wrapper {
+    height: 450px;
+  }
+}

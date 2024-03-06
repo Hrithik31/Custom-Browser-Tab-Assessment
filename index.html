@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      content-security-policy="script-src 'self' https://www.bing.com https://www.google.com https://www.youtube.com https://www.facebook.com 'strict-dynamic' 'report-sample' 'nonce-RczG/9MvierJ9fTQHaptdoc8u4qt4gjYkvv/j2Z93gA='"
+    />
+    <title>Custom Browser Tabs Implementation</title>
+    <!-- /including Font awesome incons for the + button and cross button for the Tab -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/05639d3b69.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Including jQuery via  google CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Tabs Container will have navigation and Body of the tabs -->
+    <div class="tabs-container">
+      <div class="tabs-heading">Custome Browser Tabs Implementation</div>
+      <div class="tabs-nav">
+        <!-- Nagivation has two subcontainers, left and right, left is Fixed container where as right is a flexbox -->
+        <div class="tab-left-container">
+          <!-- <button>Add Tab +</button> -->
+          <div id="add-button" class="add-tab-button">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+        </div>
+        <ul class="tab-right-container"></ul>
+      </div>
+      <div class="tabs-body">
+        <div class="input-iframe-container">
+          <div class="input-wrapper">
+            <input
+              id="input-id"
+              type="url"
+              class="input-tag"
+              name="search-term"
+              placeholder="search..."
+            />
+          </div>
+          <div class="iframe-wrapper">
+            <iframe
+              id="search-iframe"
+              class="iframe-window"
+              src="https://www.bing.com/search?igu=1"
+              style="border: 1px solid black"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
